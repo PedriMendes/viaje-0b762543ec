@@ -114,7 +114,11 @@ img.m{width:100%;display:block;border-radius:18px;box-shadow:0 20px 50px rgba(14
 .split div{display:flex;align-items:center;justify-content:center;color:#fff}
 .split .a{background:var(--v);width:50%}.split .b{background:var(--ev);width:50%}
 ul.i{list-style:none;padding:0;display:grid;gap:6px;font-size:15px;margin-top:10px}ul.i li::before{content:'✓ ';color:var(--cy);font-weight:700}
-@media(max-width:760px){.two,.fas{grid-template-columns:1fr}.two.rev>:first-child{order:0}.phones{grid-template-columns:1fr}.phones img{max-width:220px}}
+.invt{border:1px solid #33293f;border-radius:18px;overflow:hidden;background:#1d1824}
+.ir{display:grid;grid-template-columns:1.1fr 2fr 1fr;gap:22px;align-items:center;padding:22px 26px;border-bottom:1px solid #33293f}
+.ir:last-child{border:0}.ir b{display:block}.ir .amt{text-align:right;font-weight:900;font-size:clamp(26px,3.4vw,38px);color:var(--w)}
+.ir .amt.c{color:var(--cy);font-size:clamp(20px,2.6vw,28px)}.ir.tot{background:var(--v)}.ir.tot .amt{color:#fff;font-size:clamp(34px,5vw,56px)}.ir.tot .mut{color:#eadcff}
+@media(max-width:760px){.ir{grid-template-columns:1fr;gap:8px}.ir .amt{text-align:left}.two,.fas{grid-template-columns:1fr}.two.rev>:first-child{order:0}.phones{grid-template-columns:1fr}.phones img{max-width:220px}}
 @media(max-width:700px){.top .logo{height:18px}.bar{grid-template-columns:90px 1fr 52px}section{padding:52px 0}}
 </style>
 </head>
@@ -165,16 +169,15 @@ ul.i{list-style:none;padding:0;display:grid;gap:6px;font-size:15px;margin-top:10
  <h2>Qué hacen, eligen y dicen los U18</h2>
  <p class="lead mut">Panorama completo del hogar: cómo piensan, consumen y deciden teens, tweens y kids. Elegí un tema.</p>
  <div class="tabs" data-g="ent">
-  <button class="on" data-p="d">Dónde están</button><button data-p="j">Qué juegan</button><button data-p="g">Cómo gastan</button><button data-p="u">Jugos</button><button data-p="c">Cuándo</button><button data-p="e">3-12 vs 13-18</button>
+  <button class="on" data-p="d">Dónde están</button><button data-p="j">Qué juegan</button><button data-p="g">Cómo gastan</button><button data-p="w">Dónde conectar</button><button data-p="c">Cuándo conectar</button>
  </div>
  <div class="pane on" data-g="ent" data-p="d">
   <div class="grid" style="margin-bottom:22px"><div class="card"><div class="big">85%</div><p class="mut">usa YouTube, la plataforma más elegida. Llega a 8 de cada 10 chicos de 3 a 12.</p></div><div class="card"><div class="big">58%</div><p class="mut">de quienes lo usan lo mira todos los días</p></div></div>
   <div class="cols">
    <div><h3>Plataformas que usan</h3><div class="bars" data-k="plat"></div></div>
    <div><h3>Con qué frecuencia miran YouTube</h3><div class="bars" data-k="yt"></div></div>
-   <div><h3>Dónde vieron su anuncio favorito</h3><div class="bars" data-k="ad"></div></div>
-  </div>
-  <p class="src">Fuente: U18 Radar · Chile · 3-12 · plataformas (n=263) y frecuencia (n=171, quienes usan YouTube); 58% = a diario. Anuncio favorito: Kids 3-12 (n=167), acumulado 2025, respuesta múltiple. Dónde vieron su anuncio favorito, no toda la exposición.</p>
+     </div>
+  <p class="src">Fuente: U18 Radar · Chile · 3-12 · plataformas (n=263) y frecuencia (n=171, quienes usan YouTube); 58% = a diario.</p>
  </div>
  <div class="pane" data-g="ent" data-p="j">
   <div class="grid" style="margin-bottom:22px">
@@ -197,19 +200,25 @@ ul.i{list-style:none;padding:0;display:grid;gap:6px;font-size:15px;margin-top:10
   <h3>En qué gastaron su dinero el mes pasado</h3><div class="bars" data-k="gas"></div>
   <h3 style="margin-top:18px">Alimentos y bebidas, por edad</h3><div class="bars" data-k="edad"></div>
   <p class="src">Fuente: U18 Radar · Chile · Kids 3-12, olas 2024-2025: gasto y dinero de bolsillo (n=63); padres: gasto autorizado (n=143). Por edad: 3-5 (n=19), 6-9 (n=26), 10-12 (n=18).</p>
- </div>
- <div class="pane" data-g="ent" data-p="u">
-  <div class="grid" style="margin-bottom:22px"><div class="card"><div class="big">18,4%</div><p class="mut">no tiene una marca de jugo favorita</p></div><div class="card"><div class="big">8,8%</div><p class="mut">elige Del Valle como su jugo favorito</p></div></div>
+  <h3 style="font-size:22px;margin:30px 0 6px">¿Cómo vamos a conectar Del Valle? En jugos la lealtad está abierta</h3><div class="grid" style="margin-bottom:22px"><div class="card"><div class="big">18,4%</div><p class="mut">no tiene una marca de jugo favorita</p></div><div class="card"><div class="big">8,8%</div><p class="mut">elige Del Valle como su jugo favorito</p></div></div>
   <h3>Jugos que tomaron en los últimos 3 meses</h3><div class="bars" data-k="jug"></div>
   <p class="src">Fuente: U18 Radar · Chile · 3-12 · jugos (n=170) y refrescos (n=166); olas 2025.</p>
+ </div>
+ <div class="pane" data-g="ent" data-p="w">
+  <h3 style="font-size:22px;margin-bottom:6px">Los chicos ven publicidad sobre todo en YouTube</h3>
+  <p class="mut" style="margin-bottom:16px">Dónde vieron su anuncio favorito (no toda la exposición).</p>
+  <div class="cols"><div><div class="bars" data-k="ad"></div></div>
+  <div style="display:grid;gap:12px">
+   <div class="card"><span class="tag">YouTube · Presenta</span><p>Es el perfil de quien lleva luncheras al colegio: llega a 8 de cada 10 chicos de 3 a 12 años.</p></div>
+   <div class="card"><span class="tag">Apps · Juega</span><p>Game Ad es el segundo contacto: llegan a los chicos mientras juegan, no solo mientras miran.</p></div>
+   <div class="card"><span class="tag">Roblox · Entra</span><p>Una plataforma diaria, móvil y social: el lugar donde una marca puede ganarse un espacio en la conversación.</p></div></div></div>
+  <p class="src">Fuente: U18 Radar · Chile · Kids 3-12 (n=167); acumulado 2025. Respuesta múltiple.</p>
  </div>
  <div class="pane" data-g="ent" data-p="c">
   <div class="grid"><div class="card"><span class="tag">Febrero</span><h3>Vacaciones de verano</h3><p>Más tiempo libre y más horas de juego. El momento de presentar la aventura.</p></div><div class="card"><span class="tag">Marzo</span><h3>Vuelta a clases</h3><p>La rutina y la colación vuelven a ordenar el día. El momento de quedarse.</p></div>
   <div class="card"><div class="big">89 min</div><p class="mut">al día juegan Roblox los teens chilenos el fin de semana (81 min en días de semana)</p></div><div class="card"><div class="big">150K</div><p class="mut">gasto familiar en Back to School en Chile</p></div></div>
   <p class="src">Fuente: data propietaria Kidscorp, U18 Radar, Chile, 13-18 años, jugadores de Roblox, ola mayo 2026 (n=85).</p>
- </div>
- <div class="pane" data-g="ent" data-p="e">
-  <h3 style="font-size:22px;margin-bottom:6px">A los 13 la preferencia se define y Del Valle queda atrás: hay que estar ahí.</h3>
+  <h3 style="font-size:22px;margin:30px 0 6px">A los 13 la preferencia se define y Del Valle queda atrás: hay que estar ahí.</h3>
   <p class="mut" style="margin-bottom:16px">A los 3 a 12 años casi 1 de cada 5 no tiene jugo favorito: la marca todavía se puede ganar. A los 13 a 18 ya eligió, y Del Valle pierde terreno. Los adolescentes también pesan más en la compra de bebidas del hogar y viven en medios digitales.</p>
   <div class="chips" style="margin-bottom:12px"><span class="chip" style="background:var(--v);color:#fff;border-color:var(--v)">3 a 12 años</span><span class="chip" style="background:var(--cy);color:var(--k);border-color:var(--cy)">13 a 18 años</span></div>
   <div class="bars" data-k="vs"></div>
@@ -252,6 +261,7 @@ ul.i{list-style:none;padding:0;display:grid;gap:6px;font-size:15px;margin-top:10
  <div class="tabs" data-g="can"><button class="on" data-p="r">Roblox · Entra</button><button data-p="y">YouTube · Presenta</button><button data-p="a">Apps · Juega</button></div>
 
  <div class="pane on" data-g="can" data-p="r">
+  <div class="two"><div><span class="tag">Roblox</span><h3 style="font-size:26px">Imaginar, crear y prosperar en entornos virtuales</h3><p class="mut">Potenciamos a las marcas para que imaginen, creen y prosperen en entornos virtuales dinámicos, desbloqueando posibilidades ilimitadas y alcanzando sus objetivos de marketing con una creatividad audaz.</p></div><img class="m" src="img/roblox.jpg" alt="Roblox" loading="lazy" style="max-width:340px;margin:auto"></div>
   <div class="two"><div><span class="tag">Roblox · Fase 1</span><h3 style="font-size:26px">El Viaje Épico: el runner</h3><p class="mut">Un descenso a lomo del Dragón por los paisajes de Chile. Los jugadores esquivan obstáculos, recolectan naranjas y compiten por el mejor recorrido de la semana. Cada dos semanas se abre un tramo nuevo.</p>
    <div class="chips" style="margin-top:14px"><span class="chip">1–10 jugadores por partida</span><span class="chip">3 min con los 4 tramos</span></div>
    <p class="mut" style="font-size:14px;margin-top:12px"><b>Branding:</b> lobby y laterales con key visual · power up Vuelo Cítrico con la botella de Del Valle · pantallas de inicio y final · tramo nuevo cada dos semanas.</p></div>
@@ -288,19 +298,24 @@ ul.i{list-style:none;padding:0;display:grid;gap:6px;font-size:15px;margin-top:10
   </div>
   <div class="chips" style="margin-top:14px"><span class="chip">Roblox 2026</span><span class="chip">Audiencia +13</span><span class="chip">Geolocalización Chile</span><span class="chip">Móvil, PC y tablet</span></div>
 
-  <details class="deep"><summary>Elementos para generar engagement y dinámicas transaccionales</summary><div>
-   <div class="grid">
-    <div class="card"><h3>Ranking</h3><p>Muro de Leyendas con leaderboards semanales del runner y la torre.</p></div>
-    <div class="card"><h3>NPC</h3><p>El Dragón guía a los jugadores, presenta los desafíos y celebra cada logro.</p></div>
-    <div class="card"><h3>Power ups</h3><p>Vuelo Cítrico e Impulso Cítrico: la botella de Del Valle como ventaja en el juego.</p></div>
-    <div class="card"><h3>Virtual goods</h3><p>Alas, mochila y estela del Dragón. Ítems que se ganan jugando, nunca comprando.</p></div>
-    <div class="card"><h3>Personaje de marca</h3><p>Un Dragón que evoluciona con la campaña y se vuelve el rostro del mundo.</p></div>
-    <div class="card"><h3>Meta comunitaria</h3><p>El progreso colectivo desbloquea recompensas. Nadie queda atrás por no jugar un día.</p></div>
-   </div>
-   <p class="kick" style="margin-top:22px">Dinámicas transaccionales · códigos con diferentes fines (CRM, jugabilidad, venta)</p>
-   <div class="grid"><div class="card"><span class="tag">ON → ON</span><p>Códigos desde RRSS redimibles en la experiencia.</p></div><div class="card"><span class="tag">ON → OFF</span><p>Códigos entregados dentro de la experiencia, canjeables en puntos físicos.</p></div><div class="card"><span class="tag">OFF → ON</span><p>Códigos en productos o espacios físicos, redimibles dentro de la experiencia.</p></div></div>
-  </div></details>
-  <details class="deep"><summary>Diseñado para crecer sin fricción · y cómo lo medimos</summary><div>
+  <p class="kick" style="margin-top:44px">Elementos para generar engagement · mecánicas para que cada visita tenga una razón para volver</p>
+  <img class="m" src="img/eng.jpg" alt="Mockups de engagement: ranking, NPC, power ups, virtual goods, personaje de marca, meta comunitaria" loading="lazy" style="margin:14px 0 18px">
+  <div class="grid">
+   <div class="card"><h3>Ranking</h3><p>Muro de Leyendas con leaderboards semanales del runner y la torre.</p></div>
+   <div class="card"><h3>NPC</h3><p>El Dragón guía a los jugadores, presenta los desafíos y celebra cada logro.</p></div>
+   <div class="card"><h3>Power ups</h3><p>Vuelo Cítrico e Impulso Cítrico: la botella de Del Valle como ventaja en el juego.</p></div>
+   <div class="card"><h3>Virtual goods</h3><p>Alas, mochila y estela del Dragón. Ítems que se ganan jugando, nunca comprando.</p></div>
+   <div class="card"><h3>Personaje de marca</h3><p>Un Dragón que evoluciona con la campaña y se vuelve el rostro del mundo.</p></div>
+   <div class="card"><h3>Meta comunitaria</h3><p>El progreso colectivo desbloquea recompensas. Nadie queda atrás por no jugar un día.</p></div>
+  </div>
+  <p class="kick" style="margin-top:44px">Dinámicas transaccionales · códigos con diferentes fines: CRM, estimular la jugabilidad y/o la venta de productos</p>
+  <div class="grid" style="margin-top:14px">
+   <div class="card"><img class="m" src="img/tx1.jpg" alt="" loading="lazy" style="box-shadow:none;margin-bottom:12px"><span class="tag">ON → ON</span><p>Códigos desde RRSS redimibles en la experiencia.</p></div>
+   <div class="card"><img class="m" src="img/tx2.jpg" alt="" loading="lazy" style="box-shadow:none;margin-bottom:12px"><span class="tag">ON → OFF</span><p>Códigos entregados dentro de la experiencia, canjeables en puntos físicos.</p></div>
+   <div class="card"><img class="m" src="img/tx3.jpg" alt="" loading="lazy" style="box-shadow:none;margin-bottom:12px"><span class="tag">OFF → ON</span><p>Códigos en productos o espacios físicos, redimibles dentro de la experiencia.</p></div>
+  </div>
+
+  <details class="deep" open><summary>Diseñado para crecer sin fricción · y cómo lo medimos</summary><div>
    <p class="mut" style="margin-bottom:12px">Cada decisión está alineada con la Política de Marketing Responsable de The Coca-Cola Company y con el marco regulatorio chileno.</p>
    <div class="grid"><div class="card"><h3>Audiencias +13 en Roblox</h3><p>Roblox se activa solo para audiencias mayores de 13 años.</p></div><div class="card"><h3>Placements validados</h3><p>Cada entorno se valida con data propietaria antes de activarse.</p></div><div class="card"><h3>Recompensas digitales</h3><p>En Roblox, todo se gana jugando. Nada se compra.</p></div><div class="card"><h3>Sorteos con bases</h3><p>Gift cards con bases publicadas y participación regulada.</p></div></div>
    <p class="kick" style="margin-top:22px">Del primer tramo a la comunidad · indicadores</p>
@@ -309,14 +324,16 @@ ul.i{list-style:none;padding:0;display:grid;gap:6px;font-size:15px;margin-top:10
  </div>
 
  <div class="pane" data-g="can" data-p="y">
-  <div class="grid">
-   <div class="card"><h3>Formatos</h3><p>Bumper · In-Stream Skippable y Non-Skippable · Shorts</p></div>
-   <div class="card"><h3>Target</h3><p>U18 (5-17) y Teens (13-17)</p></div>
-   <div class="card"><h3>Dispositivos</h3><p>CTV, mobile y desktop</p></div>
-   <div class="card"><h3>Objetivo</h3><p>Awareness · tipo de formato: video</p></div>
-   <div class="card"><h3>Modelo de compra</h3><p>CPM / CPV</p></div>
-   <div class="card"><h3>KPIs</h3><p>Impresiones · Views</p></div>
-  </div>
+  <div class="two"><div><span class="tag">YouTube · Presenta</span><h3 style="font-size:26px">Formatos YouTube</h3><p class="mut" style="margin-bottom:14px">Non-skippable instala “El viaje épico” en los canales que los chicos ya miran.</p>
+   <div class="grid" style="grid-template-columns:1fr 1fr">
+    <div class="card"><h3>Formatos</h3><p>Bumper · In-Stream Skippable y Non-Skippable · Shorts</p></div>
+    <div class="card"><h3>Target</h3><p>U18 (5-17) y Teens (13-17)</p></div>
+    <div class="card"><h3>Dispositivos</h3><p>CTV, mobile y desktop</p></div>
+    <div class="card"><h3>Objetivo</h3><p>Awareness · formato de video</p></div>
+    <div class="card"><h3>Modelo de compra</h3><p>CPM / CPV</p></div>
+    <div class="card"><h3>KPIs</h3><p>Impresiones · Views</p></div>
+   </div></div>
+   <img class="m" src="img/yt.jpg" alt="Formatos YouTube: In-Stream en CTV, desktop y Shorts en mobile" loading="lazy"></div>
  </div>
 
  <div class="pane" data-g="can" data-p="a">
@@ -350,15 +367,14 @@ ul.i{list-style:none;padding:0;display:grid;gap:6px;font-size:15px;margin-top:10
 <section class="dk" id="inversion"><div class="wrap">
  <p class="kick">Inversión</p>
  <h2>El viaje épico empieza acá</h2>
- <p class="lead mut">Un solo plan en dos fases. Las pautas de YouTube y de in-app van bonificadas.</p>
- <p class="kick">Cómo se reparte la inversión</p>
- <div class="split"><div class="a">Fase 1 · 12K USD</div><div class="b">Fase 2 · 12K USD</div></div>
- <div class="grid">
-  <div class="card"><span class="tag">Fase 1 · febrero–marzo</span><div class="big">12K USD</div><ul class="i"><li>Runner multijugador en Roblox</li><li>4 expansiones de tramo</li><li>Teleports</li><li>8 semanas</li></ul></div>
-  <div class="card"><span class="tag">Fase 2 · desde abril</span><div class="big">12K USD</div><ul class="i"><li>Mini branded experience El Valle del Dragón</li><li>La Torre del Dragón</li><li>Actualizaciones</li></ul></div>
-  <div class="card" style="border-color:var(--cy)"><span class="tag" style="background:var(--cy);color:var(--k)">Bonificado</span><div class="big">Sin costo</div><ul class="i"><li>In-app · GameAds</li><li>YouTube · In-Stream non-skippable</li></ul></div>
+ <p class="lead mut" style="margin-bottom:24px">Un solo plan en dos fases. La pauta de YouTube y de in-app va bonificada.</p>
+ <div class="invt">
+  <div class="ir"><div><span class="tag">Fase 1</span><b>Febrero–marzo · 8 semanas</b></div><ul class="i"><li>Runner multijugador en Roblox</li><li>4 expansiones de tramo</li><li>Teleports</li></ul><div class="amt">12K USD</div></div>
+  <div class="ir"><div><span class="tag">Fase 2</span><b>Desde abril</b></div><ul class="i"><li>Mini branded experience El Valle del Dragón</li><li>La Torre del Dragón</li><li>Actualizaciones</li></ul><div class="amt">12K USD</div></div>
+  <div class="ir"><div><span class="tag" style="background:var(--cy);color:var(--k)">In-app</span><b>GameAds</b></div><ul class="i"><li>Catcher, Mix &amp; Make y Runner</li></ul><div class="amt c">Bonificado</div></div>
+  <div class="ir"><div><span class="tag" style="background:var(--cy);color:var(--k)">YouTube</span><b>In-Stream non-skippable</b></div><ul class="i"><li>Presenta al Dragón en los canales que ya miran</li></ul><div class="amt c">Bonificado</div></div>
+  <div class="ir tot"><div><b style="font-size:20px">Inversión total</b></div><p class="mut" style="font-size:14px">Fase 1 + Fase 2 · pauta de YouTube e in-app bonificada</p><div class="amt big2">24K USD</div></div>
  </div>
- <div style="margin-top:34px"><p class="kick">Inversión total</p><div class="price">24K USD</div><p class="fine">Fase 1 + Fase 2. Pauta de YouTube e in-app bonificada.</p></div>
 </div></section>
 
 <!-- 5 MEDIR -->
