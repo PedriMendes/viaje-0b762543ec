@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>El Viaje Épico · Del Valle BTS 2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--v:#9414FA;--ev:#B23AF0;--cy:#4CCBFF;--k:#121212;--w:#F9F6FB;--mut:#6b6577;--line:#e4dcec}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{font:400 16px/1.6 Montserrat,system-ui,sans-serif;background:var(--w);color:var(--k)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+.dk{background:var(--k);color:var(--w)}.dk .mut{color:#b9b0c6}
+.mut{color:var(--mut)}
+h1{font-weight:900;font-size:clamp(40px,8vw,84px);line-height:1}
+h2{font-weight:900;font-size:clamp(26px,4.4vw,42px);line-height:1.1;margin-bottom:12px}
+h3{font-weight:700;font-size:18px;margin-bottom:6px}
+.kick{font:500 12px 'Roboto Mono',monospace;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;color:var(--mut)}
+.dk .kick{color:var(--cy)}
+.lead{font-size:18px;max-width:720px;margin-bottom:28px}
+/* top */
+.top{position:fixed;inset:0 0 auto 0;height:56px;z-index:50;background:rgba(18,18,18,.92);backdrop-filter:blur(8px);display:flex;align-items:center;gap:18px;padding:0 20px;color:#fff}
+.logo{font-weight:900;letter-spacing:-.02em;font-size:20px;white-space:nowrap}
+.top nav{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none}
+.top nav a{color:#cfc7da;text-decoration:none;font-size:13px;font-weight:500;padding:6px 12px;border-radius:999px;white-space:nowrap}
+.top nav a.on{background:var(--v);color:#fff}
+.inv{background:var(--cy);color:var(--k);font-weight:700;font-size:13px;padding:7px 14px;border-radius:999px;text-decoration:none;white-space:nowrap}
+.prog{position:fixed;top:56px;left:0;right:0;height:4px;background:#2a2433;z-index:50}
+.prog b{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--v),var(--cy))}
+#dr{position:absolute;top:-6px;font-size:22px;transform:translateX(-50%);transition:left .1s}
+#st{position:fixed;top:66px;right:16px;z-index:50;font:500 11px 'Roboto Mono',monospace;background:var(--k);color:var(--cy);padding:3px 10px;border-radius:999px}
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:96px;background:radial-gradient(900px 500px at 80% 20%,rgba(148,20,250,.45),transparent 60%),radial-gradient(600px 400px at 10% 90%,rgba(76,203,255,.2),transparent 60%),var(--k)}
+.hero p.sub{font-size:20px;max-width:620px;margin:18px 0 26px;color:#d8d0e3}
+.seg{display:inline-flex;background:#2a2433;border-radius:999px;padding:4px;gap:2px}
+.seg button{border:0;background:none;color:#cfc7da;font:500 14px Montserrat;padding:10px 20px;border-radius:999px;cursor:pointer}
+.seg button.on{background:var(--v);color:#fff}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:26px}
+.btn{display:inline-block;background:var(--cy);color:var(--k);font-weight:700;padding:13px 24px;border-radius:10px;text-decoration:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:12px;font-weight:500;padding:6px 12px;border-radius:999px;border:1px solid #4a4056;color:#d8d0e3}
+.lt .chip{border-color:var(--line);color:var(--k);background:#fff}
+.big{font-weight:900;font-size:clamp(34px,5vw,56px);line-height:1;color:var(--k)}
+.dk .big{color:var(--cy)}
+/* cards */
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
+.dk .card{background:#1d1824;border-color:#33293f}
+.card p{font-size:15px}
+.tag{display:inline-block;font:500 11px 'Roboto Mono',monospace;letter-spacing:.1em;text-transform:uppercase;background:var(--v);color:#fff;border-radius:999px;padding:3px 10px;margin-bottom:10px}
+.src{font:400 11.5px/1.5 'Roboto Mono',monospace;color:var(--mut);margin-top:18px}
+.dk .src{color:#9d93ad}
+/* tabs */
+.tabs{display:flex;gap:6px;overflow-x:auto;margin:6px 0 22px;padding-bottom:4px;scrollbar-width:none}
+.tabs button{border:1px solid var(--line);background:#fff;font:500 14px Montserrat;padding:10px 18px;border-radius:999px;cursor:pointer;white-space:nowrap;color:var(--k)}
+.tabs button.on{background:var(--v);border-color:var(--v);color:#fff}
+.dk .tabs button{background:#1d1824;border-color:#33293f;color:#d8d0e3}.dk .tabs button.on{background:var(--v);color:#fff}
+.pane{display:none}.pane.on{display:block;animation:in .35s}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* bars */
+.bars{display:grid;gap:9px;margin:10px 0}
+.bar{display:grid;grid-template-columns:minmax(90px,170px) 1fr 58px;gap:10px;align-items:center;font-size:14px}
+.bar i{display:block;height:14px;border-radius:7px;background:#eadff5;overflow:hidden}
+.bar i b{display:block;height:100%;width:0;border-radius:7px;background:linear-gradient(90deg,var(--v),var(--ev));transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.bar i b.c{background:var(--cy)}
+.bar span:last-child{font-weight:700;text-align:right}
+.cols{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+/* details */
+details.deep{margin-top:26px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.dk details.deep{background:#1d1824;border-color:#33293f}
+details.deep>summary{cursor:pointer;padding:16px 22px;font-weight:700;list-style:none;display:flex;justify-content:space-between}
+details.deep>summary::after{content:'+';font-size:22px;line-height:1;color:var(--v)}
+details.deep[open]>summary::after{content:'–'}
+details.deep>div{padding:4px 22px 24px}
+/* steps */
+.steps{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.steps button{flex:1;min-width:64px;border:1px solid #33293f;background:#1d1824;color:#d8d0e3;font:700 14px Montserrat;padding:12px 4px;border-radius:10px;cursor:pointer}
+.steps button.on{background:var(--cy);color:var(--k);border-color:var(--cy)}
+.tramo{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.tramo .dg{font-size:60px;transition:font-size .3s;width:110px;text-align:center}
+/* gantt */
+.gantt{display:grid;grid-template-columns:180px repeat(5,1fr);gap:6px;font-size:13px;align-items:center;overflow-x:auto;min-width:640px}
+.gantt .h{font:500 12px 'Roboto Mono',monospace;color:var(--mut);text-align:center}
+.gantt .r{background:linear-gradient(90deg,var(--v),var(--ev));height:22px;border-radius:11px}
+.ganw{overflow-x:auto}
+/* engine */
+.flow{display:flex;gap:14px;align-items:stretch;flex-wrap:wrap}
+.flow>.card{flex:1;min-width:200px}
+.arr{align-self:center;font-size:26px;color:var(--cy)}
+/* phone */
+.phone{width:230px;height:380px;border:6px solid #33293f;border-radius:30px;background:linear-gradient(#ffb347,#ff8a00);position:relative;overflow:hidden;margin:auto;user-select:none}
+.phone .hud{position:absolute;top:12px;left:0;right:0;text-align:center;font-weight:900;color:#fff}
+.phone .cta{position:absolute;bottom:14px;left:14px;right:14px;background:var(--v);color:#fff;text-align:center;border-radius:10px;padding:8px;font-weight:700;font-size:13px}
+.or{position:absolute;font-size:30px;cursor:pointer;top:-40px}
+.price{font-weight:900;font-size:clamp(60px,12vw,120px);line-height:1;color:var(--cy)}
+.fine{font-size:12px;color:#9d93ad}
+footer{padding:40px 0;text-align:center;font-size:13px}
+.two{display:grid;gap:26px;grid-template-columns:1fr 1fr;align-items:center;margin:34px 0}
+.two.rev>:first-child{order:2}
+img.m{width:100%;display:block;border-radius:18px;box-shadow:0 20px 50px rgba(148,20,250,.35)}
+.fas{display:grid;gap:18px;grid-template-columns:1fr 1fr}
+.fas .pill{display:block;text-align:center;background:var(--v);color:#fff;font-weight:700;font-size:14px;border-radius:999px;padding:9px;margin-bottom:12px}
+.fas .cc{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fas .card{text-align:center;padding:18px 12px}
+.fas .d{line-height:1;margin-bottom:6px}
+.phones{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
+.phones figure{text-align:center}.phones img{width:100%;max-width:260px;border-radius:22px}
+.phones figcaption{margin-top:10px;font-size:14px}
+.nt{border-radius:105px 0 0 0}
+.split{display:flex;height:64px;border-radius:14px;overflow:hidden;font-weight:900;font-size:18px;margin:8px 0 22px}
+.split div{display:flex;align-items:center;justify-content:center;color:#fff}
+.split .a{background:var(--v);width:50%}.split .b{background:var(--ev);width:50%}
+ul.i{list-style:none;padding:0;display:grid;gap:6px;font-size:15px;margin-top:10px}ul.i li::before{content:'✓ ';color:var(--cy);font-weight:700}
+@media(max-width:760px){.two,.fas{grid-template-columns:1fr}.two.rev>:first-child{order:0}.phones{grid-template-columns:1fr}.phones img{max-width:220px}}
+@media(max-width:700px){.top .logo{height:18px}.bar{grid-template-columns:90px 1fr 52px}section{padding:52px 0}}
+</style>
+</head>
+<body>
+<header class="top">
+ <img class="logo" src="img/logo.png" alt="Kidscorp" style="height:22px">
+ <nav id="nav">
+  <a href="#s0">Resumen</a><a href="#s1">1 Entender</a><a href="#s2">2 Planificar</a><a href="#s3">3 Crear</a><a href="#s4">4 Entregar</a><a href="#s5">5 Medir</a>
+ </nav>
+ <a class="inv" href="#inversion">Inversión · 24K USD</a>
+</header>
+<div class="prog"><b id="pb"></b><i id="dr">🐉</i></div>
+<div id="st">Cría</div>
+
+<section class="hero dk"><div class="wrap">
+ <img src="img/logo.png" alt="Kidscorp" style="height:30px;margin-bottom:34px"><p class="kick">Del Valle · Back To School 2027 · Chile</p>
+ <h1>El viaje<br>épico</h1>
+ <p class="sub">Propuesta de medios. Una historia, tres pantallas: YouTube presenta, las apps juegan y Roblox deja entrar al Dragón.</p>
+ <div class="row">
+  <div class="seg" role="group" aria-label="Modo"><button class="on" data-m="x">⚡ Ruta expresa</button><button data-m="f">🧭 Explorar todo</button></div>
+  <a class="btn" href="#s0">Empezar el viaje ↓</a>
+ </div>
+ <div class="chips"><span class="chip">Zero PI data</span><span class="chip">COPPA · GDPR-K · LGPD</span><span class="chip">kidSAFE Seal · FTC Safe Harbor</span><span class="chip">Meaningful for kids · Suitable for brands</span></div>
+ <p class="src" style="margin-top:22px">Ruta expresa: lo esencial en pocos minutos, con “detalle” a un clic. Explorar todo: abre cada sección completa.</p>
+</div></section>
+
+<!-- RESUMEN -->
+<section class="lt" id="s0"><div class="wrap">
+ <p class="kick">Resumen</p>
+ <h2>Coca-Cola ya lidera los refrescos. Del Valle quiere ser la elección en jugos.</h2>
+ <p class="lead">Entre los chicos de 3 a 12 años de Chile, el 33,5% elige Coca-Cola como su refresco favorito. En jugos, el 8,8% elige Del Valle y el 18,4% no tiene una marca favorita. La marca ya es conocida: lo que hay que construir es la preferencia en jugos.</p>
+ <div class="grid">
+  <div class="card"><span class="tag">YouTube · Presenta</span><h3>Presentamos al Dragón</h3><p>Non-skippable instala “El viaje épico” en los canales que los chicos ya miran.</p></div>
+  <div class="card"><span class="tag">Apps · Juega</span><h3>Abrimos la puerta</h3><p>Game Ad llega a los chicos mientras juegan, con el Dragón como protagonista.</p></div>
+  <div class="card"><span class="tag">Roblox · Entra</span><h3>Lo dejamos entrar</h3><p>Un formato de video en un nuevo touchpoint con la audiencia core de Del Valle para posicionarnos en el segmento 13-17.</p></div>
+ </div>
+ <div class="grid" style="margin-top:16px">
+  <div class="card"><div class="big">33,5%</div><p class="mut">elige Coca-Cola como refresco favorito</p></div>
+  <div class="card"><div class="big">8,8%</div><p class="mut">elige Del Valle como jugo favorito</p></div>
+  <div class="card"><div class="big">24K USD</div><p class="mut">inversión total · <a href="#inversion" style="color:var(--v)">ver detalle</a></p></div>
+ </div>
+ <p class="src">Fuente: U18 Radar · Chile · 3-12 · refresco favorito (n=166) y jugo favorito (n=170); olas 2025.</p>
+</div></section>
+
+<!-- 1 ENTENDER -->
+<section class="dk" id="s1"><div class="wrap">
+ <p class="kick">1 · Entender · U18 Radar</p>
+ <h2>Qué hacen, eligen y dicen los U18</h2>
+ <p class="lead mut">Panorama completo del hogar: cómo piensan, consumen y deciden teens, tweens y kids. Elegí un tema.</p>
+ <div class="tabs" data-g="ent">
+  <button class="on" data-p="d">Dónde están</button><button data-p="j">Qué juegan</button><button data-p="g">Cómo gastan</button><button data-p="u">Jugos</button><button data-p="c">Cuándo</button><button data-p="e">3-12 vs 13-18</button>
+ </div>
+ <div class="pane on" data-g="ent" data-p="d">
+  <div class="grid" style="margin-bottom:22px"><div class="card"><div class="big">85%</div><p class="mut">usa YouTube, la plataforma más elegida. Llega a 8 de cada 10 chicos de 3 a 12.</p></div><div class="card"><div class="big">58%</div><p class="mut">de quienes lo usan lo mira todos los días</p></div></div>
+  <div class="cols">
+   <div><h3>Plataformas que usan</h3><div class="bars" data-k="plat"></div></div>
+   <div><h3>Con qué frecuencia miran YouTube</h3><div class="bars" data-k="yt"></div></div>
+   <div><h3>Dónde vieron su anuncio favorito</h3><div class="bars" data-k="ad"></div></div>
+  </div>
+  <p class="src">Fuente: U18 Radar · Chile · 3-12 · plataformas (n=263) y frecuencia (n=171, quienes usan YouTube); 58% = a diario. Anuncio favorito: Kids 3-12 (n=167), acumulado 2025, respuesta múltiple. Dónde vieron su anuncio favorito, no toda la exposición.</p>
+ </div>
+ <div class="pane" data-g="ent" data-p="j">
+  <div class="grid" style="margin-bottom:22px">
+   <div class="card"><div class="big">53%</div><p class="mut">de los que juegan videojuegos lo hace todos los días</p></div>
+   <div class="card"><div class="big">75,7%</div><p class="mut">usa un smartphone habitualmente</p></div>
+   <div class="card"><div class="big">38,2%</div><p class="mut">tiene Roblox entre las apps de su celular o tablet</p></div>
+  </div>
+  <div class="cols">
+   <div><h3>Juegos del último mes</h3><div class="bars" data-k="jue"></div><p class="mut" style="font-size:14px">49% juega Roblox principalmente en el celular · 20,1% mira let’s plays en YouTube.</p></div>
+   <div class="card"><span class="tag">Roblox · teens 13-18</span><h3>El patio de juegos de los teens chilenos</h3><div class="grid" style="margin-top:12px;grid-template-columns:1fr 1fr"><div><div class="big">#1</div><p class="mut" style="font-size:13px">en juegos del último mes · 44% lo jugó</p></div><div><div class="big">#1</div><p class="mut" style="font-size:13px">en videojuego favorito · 32% lo elige</p></div><div><div class="big">42%</div><p class="mut" style="font-size:13px">juega desde el celular (base acotada, n=60)</p></div><div><div class="big">72%</div><p class="mut" style="font-size:13px">descubre juegos por sus amigos</p></div></div></div>
+  </div>
+  <p class="src">Fuente: U18 Radar · Chile · 3-12 · frecuencia de juego (n=102), dispositivos y apps (n=263), juegos del último mes (n=298), dispositivo principal (n=152), YouTube (n=160); olas 2025. Teens: 13-18, ola mayo 2026.</p>
+ </div>
+ <div class="pane" data-g="ent" data-p="g">
+  <div class="grid" style="margin-bottom:22px">
+   <div class="card"><div class="big">70%</div><p class="mut">recibe cosas porque un adulto se las compra cuando las necesita</p></div>
+   <div class="card"><div class="big">3%</div><p class="mut">tiene dinero de bolsillo propio</p></div>
+   <div class="card"><div class="big">46,4%</div><p class="mut">no tiene autorizado gastar sin consultar a sus padres</p></div>
+  </div>
+  <h3>En qué gastaron su dinero el mes pasado</h3><div class="bars" data-k="gas"></div>
+  <h3 style="margin-top:18px">Alimentos y bebidas, por edad</h3><div class="bars" data-k="edad"></div>
+  <p class="src">Fuente: U18 Radar · Chile · Kids 3-12, olas 2024-2025: gasto y dinero de bolsillo (n=63); padres: gasto autorizado (n=143). Por edad: 3-5 (n=19), 6-9 (n=26), 10-12 (n=18).</p>
+ </div>
+ <div class="pane" data-g="ent" data-p="u">
+  <div class="grid" style="margin-bottom:22px"><div class="card"><div class="big">18,4%</div><p class="mut">no tiene una marca de jugo favorita</p></div><div class="card"><div class="big">8,8%</div><p class="mut">elige Del Valle como su jugo favorito</p></div></div>
+  <h3>Jugos que tomaron en los últimos 3 meses</h3><div class="bars" data-k="jug"></div>
+  <p class="src">Fuente: U18 Radar · Chile · 3-12 · jugos (n=170) y refrescos (n=166); olas 2025.</p>
+ </div>
+ <div class="pane" data-g="ent" data-p="c">
+  <div class="grid"><div class="card"><span class="tag">Febrero</span><h3>Vacaciones de verano</h3><p>Más tiempo libre y más horas de juego. El momento de presentar la aventura.</p></div><div class="card"><span class="tag">Marzo</span><h3>Vuelta a clases</h3><p>La rutina y la colación vuelven a ordenar el día. El momento de quedarse.</p></div>
+  <div class="card"><div class="big">89 min</div><p class="mut">al día juegan Roblox los teens chilenos el fin de semana (81 min en días de semana)</p></div><div class="card"><div class="big">150K</div><p class="mut">gasto familiar en Back to School en Chile</p></div></div>
+  <p class="src">Fuente: data propietaria Kidscorp, U18 Radar, Chile, 13-18 años, jugadores de Roblox, ola mayo 2026 (n=85).</p>
+ </div>
+ <div class="pane" data-g="ent" data-p="e">
+  <h3 style="font-size:22px;margin-bottom:6px">A los 13 la preferencia se define y Del Valle queda atrás: hay que estar ahí.</h3>
+  <p class="mut" style="margin-bottom:16px">A los 3 a 12 años casi 1 de cada 5 no tiene jugo favorito: la marca todavía se puede ganar. A los 13 a 18 ya eligió, y Del Valle pierde terreno. Los adolescentes también pesan más en la compra de bebidas del hogar y viven en medios digitales.</p>
+  <div class="chips" style="margin-bottom:12px"><span class="chip" style="background:var(--v);color:#fff;border-color:var(--v)">3 a 12 años</span><span class="chip" style="background:var(--cy);color:var(--k);border-color:var(--cy)">13 a 18 años</span></div>
+  <div class="bars" data-k="vs"></div>
+  <p class="src">Fuente: U18 Radar · Chile · paneles Kids y Familias, 2025. Influencia: mucho o bastante, según los padres.</p>
+ </div>
+</div></section>
+
+<!-- 2 PLANIFICAR -->
+<section class="lt" id="s2"><div class="wrap">
+ <p class="kick">2 · Planificar · Campaign Planner</p>
+ <h2>Saber a cuántos vas a impactar antes de invertir</h2>
+ <p class="lead">La mayoría de las campañas U18 se construyen sobre suposiciones. El Campaign Planner del U18 DSP reemplaza el ojo por un modelo de alcance propietario y totalmente predictivo.</p>
+ <h3>Del kickoff al lanzamiento · lanzamos la primera semana de febrero</h3>
+ <div class="ganw"><div class="gantt">
+  <div></div><div class="h">Dic</div><div class="h">Ene</div><div class="h">Feb</div><div class="h">Mar</div><div class="h">Abr +</div>
+  <div>Aprobación y kickoff</div><div class="r" style="grid-column:2/3"></div>
+  <div>Diseño del Dragón</div><div class="r" style="grid-column:2/4"></div>
+  <div>Producción del runner y tramo 1</div><div class="r" style="grid-column:3/4"></div>
+  <div>QA, publicación y review</div><div class="r" style="grid-column:3/4"></div>
+  <div>Lanzamiento y 4 expansiones</div><div class="r" style="grid-column:4/6"></div>
+  <div>In-app teens y Parents</div><div class="r" style="grid-column:4/6"></div>
+  <div>Producción de la Fase 2</div><div class="r" style="grid-column:5/6"></div>
+  <div>Fase 2 · El Valle del Dragón</div><div class="r" style="grid-column:6/7"></div>
+ </div></div>
+ <p class="src">Reporting quincenal durante la campaña y reporte final con data e insights. · Fuente: U18 DSP · Campaign Planner.</p>
+</div></section>
+
+<!-- 3 CREAR -->
+<section class="dk" id="s3"><div class="wrap">
+ <p class="kick">3 · Crear · Creative Studio</p>
+ <h2>Una historia, tres capas</h2>
+ <p class="lead mut">El mismo concepto, con el mensaje correcto para cada audiencia. Motor emocional: creamos entornos seguros, despertando emociones y potenciando la recompensa.</p>
+ <div class="grid">
+  <div class="card"><span class="tag">El Dragón</span><h3>Un Dragón que crece con el viaje</h3><p>Asociado al sabor naranja, evoluciona con cada tramo: de Cría a Épico. Es el rostro de El Viaje Épico en Roblox, en las apps y en YouTube.</p></div>
+  <div class="card"><span class="tag">El Sorteo</span><h3>Cada semana, una razón para volver</h3><p>Un sorteo semanal de gift cards invita a la familia a participar. Game Ad lleva al Dragón y al sorteo a las apps que ya usan, con CTA al juego.</p></div>
+  <div class="card"><span class="tag">Febrero · Refresh</span><h3>Lanzamiento</h3><p>Primeros dos tramos: el Dragón nace y explora. Foco en alcance y en que el personaje se reconozca.</p></div>
+  <div class="card"><span class="tag">Marzo · Everyday Routine</span><h3>Continuidad</h3><p>Últimos dos tramos: el Dragón se vuelve Guardián y Épico. Del Valle entra en la lonchera, el recreo y la vuelta a casa. Foco en frecuencia y en el sorteo.</p></div>
+ </div>
+ <p class="kick" style="margin-top:44px">Elegí un canal</p>
+ <div class="tabs" data-g="can"><button class="on" data-p="r">Roblox · Entra</button><button data-p="y">YouTube · Presenta</button><button data-p="a">Apps · Juega</button></div>
+
+ <div class="pane on" data-g="can" data-p="r">
+  <div class="two"><div><span class="tag">Roblox · Fase 1</span><h3 style="font-size:26px">El Viaje Épico: el runner</h3><p class="mut">Un descenso a lomo del Dragón por los paisajes de Chile. Los jugadores esquivan obstáculos, recolectan naranjas y compiten por el mejor recorrido de la semana. Cada dos semanas se abre un tramo nuevo.</p>
+   <div class="chips" style="margin-top:14px"><span class="chip">1–10 jugadores por partida</span><span class="chip">3 min con los 4 tramos</span></div>
+   <p class="mut" style="font-size:14px;margin-top:12px"><b>Branding:</b> lobby y laterales con key visual · power up Vuelo Cítrico con la botella de Del Valle · pantallas de inicio y final · tramo nuevo cada dos semanas.</p></div>
+   <img class="m" src="img/runner.jpg" alt="El Viaje Épico: el runner" loading="lazy"></div>
+
+  <p class="kick">8 semanas, 4 tramos, un Dragón que crece</p>
+  <p class="mut" style="margin-bottom:16px">Cada dos semanas el viaje suma un tramo nuevo. En la semana 7, el recorrido completo dura 3 minutos.</p>
+  <div class="fas">
+   <div><span class="pill">Refresh · febrero</span><div class="cc">
+    <div class="card"><div class="d" style="font-size:40px">🐉</div><span class="mut" style="font-size:12px">Tramo 1 · Sem. 1–2</span><h3>Hielos y Volcanes</h3><p class="mut">Dragón: Cría</p></div>
+    <div class="card"><div class="d" style="font-size:54px">🐉</div><span class="mut" style="font-size:12px">Tramo 2 · Sem. 3–4</span><h3>Huertos del Valle</h3><p class="mut">Dragón: Explorador</p></div></div></div>
+   <div><span class="pill">Everyday Routine · marzo</span><div class="cc">
+    <div class="card"><div class="d" style="font-size:68px">🐉</div><span class="mut" style="font-size:12px">Tramo 3 · Sem. 5–6</span><h3>La Ruta de la Ciudad</h3><p class="mut">Dragón: Guardián</p></div>
+    <div class="card"><div class="d" style="font-size:84px">🐉</div><span class="mut" style="font-size:12px">Tramo 4 · Sem. 7–8</span><h3>La Cima Épica</h3><p class="mut">Dragón: Épico</p></div></div></div>
+  </div>
+  <p class="fine" style="margin-top:10px">Sorteo semanal · In-app teens y Parents · todas las semanas.</p>
+
+  <div class="two rev"><div><span class="tag">Roblox · Fase 2 · desde abril</span><h3 style="font-size:26px">El Valle del Dragón · mini branded experience</h3><p class="mut">El viaje continúa: cuando termina el Back to School, el runner no se apaga, se convierte en un mundo. El Viaje Épico sigue disponible y se suma La Torre del Dragón. Motor: la meta comunitaria; lo que recolecta toda la comunidad en cada ciclo de dos semanas desbloquea una recompensa para todos.</p>
+   <div class="grid" style="margin-top:14px;grid-template-columns:1fr 1fr"><div class="card"><h3>Portal del Viaje</h3><p>Acceso al runner con sus 4 tramos.</p></div><div class="card"><h3>La Torre del Dragón</h3><p>El nuevo desafío vertical.</p></div><div class="card"><h3>Árbol de Escamas</h3><p>Canje de recompensas ganadas jugando.</p></div><div class="card"><h3>Muro de Leyendas</h3><p>Leaderboards del runner y de la torre.</p></div></div>
+   <p class="fine" style="margin-top:10px">Economía: Escamas ganadas en el runner y la torre. Nada se compra. · Un mundo abierto a crecer con nuevas actualizaciones y expansiones a lo largo del año.</p></div>
+   <img class="m" src="img/valle.jpg" alt="El Valle del Dragón" loading="lazy"></div>
+
+  <div class="two"><div><span class="tag">Roblox · Fase 2</span><h3 style="font-size:26px">La Torre del Dragón</h3><p class="mut">Llegar a la cima, encontrar al Dragón: un obby vertical contra el reloj. Los jugadores superan plataformas y obstáculos, y compiten por el mejor tiempo de subida. Cada nivel revive un tramo del viaje.</p>
+   <div class="chips" style="margin:12px 0"><span class="chip">Nivel 1 · Hielos y Volcanes</span><span class="chip">Nivel 2 · Huertos del Valle</span><span class="chip">Nivel 3 · La Ruta de la Ciudad</span><span class="chip">Nivel 4 · La Cima Épica</span></div>
+   <p class="mut" style="font-size:14px"><b>Ficha:</b> obby vertical multijugador contra reloj · checkpoints en cada nivel · leaderboard de mejores tiempos.<br><b>Branding:</b> Impulso Cítrico (doble salto) con la botella de Del Valle · key visual en checkpoints · el Dragón Épico en la cima.</p></div>
+   <img class="m" src="img/torre.jpg" alt="La Torre del Dragón" loading="lazy" style="max-width:380px;margin:auto"></div>
+
+  <p class="kick">Amplificación · Teleport Portals · tráfico desde las experiencias top</p>
+  <p class="mut" style="margin-bottom:14px">Colocamos un portal de marca dentro de las experiencias más visitadas de Roblox. El jugador atraviesa el portal y entra al juego de Del Valle.</p>
+  <div class="phones" style="align-items:start">
+   <figure><img class="m" src="img/tp1.jpg" alt="" style="max-width:none"><figcaption><span class="tag">01</span><br><b>Host Experience</b><br><span class="mut">Usuario juega una experiencia top de Roblox.</span></figcaption></figure>
+   <figure><img class="m" src="img/tp2.jpg" alt="" style="max-width:none"><figcaption><span class="tag">02</span><br><b>Branded Billboard + Portal</b><br><span class="mut">Aparece un portal de marca con CTA visual.</span></figcaption></figure>
+   <figure><img class="m" src="img/valle.jpg" alt="" style="max-width:none"><figcaption><span class="tag">03</span><br><b>Del Valle en Roblox</b><br><span class="mut">Jugador atraviesa el portal y entra a la experiencia.</span></figcaption></figure>
+  </div>
+  <div class="chips" style="margin-top:14px"><span class="chip">Roblox 2026</span><span class="chip">Audiencia +13</span><span class="chip">Geolocalización Chile</span><span class="chip">Móvil, PC y tablet</span></div>
+
+  <details class="deep"><summary>Elementos para generar engagement y dinámicas transaccionales</summary><div>
+   <div class="grid">
+    <div class="card"><h3>Ranking</h3><p>Muro de Leyendas con leaderboards semanales del runner y la torre.</p></div>
+    <div class="card"><h3>NPC</h3><p>El Dragón guía a los jugadores, presenta los desafíos y celebra cada logro.</p></div>
+    <div class="card"><h3>Power ups</h3><p>Vuelo Cítrico e Impulso Cítrico: la botella de Del Valle como ventaja en el juego.</p></div>
+    <div class="card"><h3>Virtual goods</h3><p>Alas, mochila y estela del Dragón. Ítems que se ganan jugando, nunca comprando.</p></div>
+    <div class="card"><h3>Personaje de marca</h3><p>Un Dragón que evoluciona con la campaña y se vuelve el rostro del mundo.</p></div>
+    <div class="card"><h3>Meta comunitaria</h3><p>El progreso colectivo desbloquea recompensas. Nadie queda atrás por no jugar un día.</p></div>
+   </div>
+   <p class="kick" style="margin-top:22px">Dinámicas transaccionales · códigos con diferentes fines (CRM, jugabilidad, venta)</p>
+   <div class="grid"><div class="card"><span class="tag">ON → ON</span><p>Códigos desde RRSS redimibles en la experiencia.</p></div><div class="card"><span class="tag">ON → OFF</span><p>Códigos entregados dentro de la experiencia, canjeables en puntos físicos.</p></div><div class="card"><span class="tag">OFF → ON</span><p>Códigos en productos o espacios físicos, redimibles dentro de la experiencia.</p></div></div>
+  </div></details>
+  <details class="deep"><summary>Diseñado para crecer sin fricción · y cómo lo medimos</summary><div>
+   <p class="mut" style="margin-bottom:12px">Cada decisión está alineada con la Política de Marketing Responsable de The Coca-Cola Company y con el marco regulatorio chileno.</p>
+   <div class="grid"><div class="card"><h3>Audiencias +13 en Roblox</h3><p>Roblox se activa solo para audiencias mayores de 13 años.</p></div><div class="card"><h3>Placements validados</h3><p>Cada entorno se valida con data propietaria antes de activarse.</p></div><div class="card"><h3>Recompensas digitales</h3><p>En Roblox, todo se gana jugando. Nada se compra.</p></div><div class="card"><h3>Sorteos con bases</h3><p>Gift cards con bases publicadas y participación regulada.</p></div></div>
+   <p class="kick" style="margin-top:22px">Del primer tramo a la comunidad · indicadores</p>
+   <div class="grid"><div class="card"><h3>Atracción</h3><p class="mut">Jugadores únicos · Impresiones de billboards · Teleport Rate</p></div><div class="card"><h3>Engagement</h3><p class="mut">Tiempo promedio de juego · Sesiones · Interacciones in-game · Interacción in-app</p></div><div class="card"><h3>Retención</h3><p class="mut">Replay Rate · Retorno en cada expansión · Metas comunitarias cumplidas</p></div><div class="card"><h3>Fase 2</h3><p class="mut">Migración del runner al Valle · Llegada a la cima · Mejora de tiempos · Juego cruzado</p></div><div class="card"><h3>In-App</h3><p class="mut">CTR a la landing del sorteo · Impresiones</p></div></div>
+  </div></details>
+ </div>
+
+ <div class="pane" data-g="can" data-p="y">
+  <div class="grid">
+   <div class="card"><h3>Formatos</h3><p>Bumper · In-Stream Skippable y Non-Skippable · Shorts</p></div>
+   <div class="card"><h3>Target</h3><p>U18 (5-17) y Teens (13-17)</p></div>
+   <div class="card"><h3>Dispositivos</h3><p>CTV, mobile y desktop</p></div>
+   <div class="card"><h3>Objetivo</h3><p>Awareness · tipo de formato: video</p></div>
+   <div class="card"><h3>Modelo de compra</h3><p>CPM / CPV</p></div>
+   <div class="card"><h3>KPIs</h3><p>Impresiones · Views</p></div>
+  </div>
+ </div>
+
+ <div class="pane" data-g="can" data-p="a">
+  <p class="lead mut">El Viaje épico, en las Apps donde ya están: GameAds interactivos para teens (+13), con CTA directo al mundo de Roblox.</p>
+  <div class="phones">
+   <figure><img src="img/app1.jpg" alt="Catcher" loading="lazy"><figcaption><b>Catcher · Lluvia de Naranjas</b><br><span class="mut">“¡Atrapa todas las naranjas que puedas!”</span><br><span class="tag" style="margin-top:8px">Sigue el viaje en Roblox</span></figcaption></figure>
+   <figure><img src="img/app2.jpg" alt="Mix & Make" loading="lazy"><figcaption><b>Mix &amp; Make · Arma tu Jugo Épica</b><br><span class="mut">“Combina, arma y desbloquea tu colación”</span><br><span class="tag" style="margin-top:8px">Juega El Viaje Épico</span></figcaption></figure>
+   <figure><img src="img/app3.jpg" alt="Runner" loading="lazy"><figcaption><b>Runner · Vuela con el Dragón</b><br><span class="mut">“Esquiva, vuela, llega a la cima”</span><br><span class="tag" style="margin-top:8px">Únete al Viaje</span></figcaption></figure>
+  </div>
+ </div>
+ <details class="deep"><summary>Creative Studio: del dato a la pieza interactiva</summary><div>
+  <p class="mut" style="margin-bottom:12px">Formatos desarrollados tras una década de datos de performance de campañas. En el Creative Lab identificamos micro-segmentos y testeamos múltiples versiones para entregar el mensaje correcto a cada uno.</p>
+  <div class="grid"><div class="card"><h3>Tecnología cognitiva</h3><p>Calibramos la curva de atención, ni tan simple que aburra, ni tan compleja que frustre, ajustada a cada rango etario.</p></div><div class="card"><h3>Habilidades y acciones</h3><p>De ‘Tap’ a ‘Press’. Adaptamos la UI a sus habilidades motrices diseñando interfaces que mantienen el interés.</p></div></div>
+  <div class="chips" style="margin-top:12px"><span class="chip">Formatos nativos U18</span><span class="chip">Brand-safe</span><span class="chip">Producción ad hoc a la plataforma</span><span class="chip">UX pensado para performance</span></div>
+ </div></details>
+</div></section>
+
+<!-- 4 ENTREGAR -->
+<section class="lt" id="s4"><div class="wrap">
+ <p class="kick">4 · Entregar · U18 DSP · Smart Bidding</p>
+ <h2>Tu audiencia U18 en cada impresión</h2>
+ <p class="lead">Smart Bidding y pujas predictivas sobre inventario validado para U18: YouTube y apps kid-safe, con frecuencia ajustada por edad y zero PII.</p>
+ <div class="flow">
+  <div class="card"><span class="tag">Señales</span><p><b>Comportamiento</b> · Panel U18 propio<br><b>Contexto</b> · Contenido, a escala<br><b>Histórico</b> · Performance de campañas</p></div><span class="arr" style="color:var(--v)">→</span>
+  <div class="card"><span class="tag">U18 Prediction Engine</span><p><b>Modelo predictivo + Smart Bidding.</b> Cada impresión se evalúa y se pricea en tiempo real.</p></div><span class="arr" style="color:var(--v)">→</span>
+  <div class="card"><span class="tag">Optimización continua</span><p>placements · formatos · dispositivos · daypart · días · frecuencia</p></div>
+ </div>
+ <p class="src">Privacy by design · sin PII · sin perfilado individual. Fuente: U18 DSP · U18 Prediction Engine.</p>
+</div></section>
+
+<section class="dk" id="inversion"><div class="wrap">
+ <p class="kick">Inversión</p>
+ <h2>El viaje épico empieza acá</h2>
+ <p class="lead mut">Un solo plan en dos fases. Las pautas de YouTube y de in-app van bonificadas.</p>
+ <p class="kick">Cómo se reparte la inversión</p>
+ <div class="split"><div class="a">Fase 1 · 12K USD</div><div class="b">Fase 2 · 12K USD</div></div>
+ <div class="grid">
+  <div class="card"><span class="tag">Fase 1 · febrero–marzo</span><div class="big">12K USD</div><ul class="i"><li>Runner multijugador en Roblox</li><li>4 expansiones de tramo</li><li>Teleports</li><li>8 semanas</li></ul></div>
+  <div class="card"><span class="tag">Fase 2 · desde abril</span><div class="big">12K USD</div><ul class="i"><li>Mini branded experience El Valle del Dragón</li><li>La Torre del Dragón</li><li>Actualizaciones</li></ul></div>
+  <div class="card" style="border-color:var(--cy)"><span class="tag" style="background:var(--cy);color:var(--k)">Bonificado</span><div class="big">Sin costo</div><ul class="i"><li>In-app · GameAds</li><li>YouTube · In-Stream non-skippable</li></ul></div>
+ </div>
+ <div style="margin-top:34px"><p class="kick">Inversión total</p><div class="price">24K USD</div><p class="fine">Fase 1 + Fase 2. Pauta de YouTube e in-app bonificada.</p></div>
+</div></section>
+
+<!-- 5 MEDIR -->
+<section class="lt" id="s5"><div class="wrap">
+ <p class="kick">5 · Medir · Reporting en vivo</p>
+ <h2>Planificamos a quién alcanzar; medimos a quién alcanzamos</h2>
+ <p class="lead">Conocé exactamente quién vio tu ad en real time con el Reporting del DSP U18.</p>
+ <div class="grid">
+  <div class="card"><span class="tag">KPI principal</span><h3>Nivel 01 · Campaña</h3><p>Alcance on-target por segmento de edad, contra lo proyectado.</p></div>
+  <div class="card"><span class="tag">KPIs de soporte</span><h3>Nivel 01 · Campaña</h3><p>Impresiones, frecuencia, VTR en YouTube, VCR y CTR, CPM vs. benchmark.</p></div>
+  <div class="card"><span class="tag">Reportes</span><h3>Entregable</h3><p>Dashboard en vivo, pacing semanal y reporte final con insights y recomendaciones por segmento.</p></div>
+ </div>
+</div></section>
+
+<section class="dk nt" style="text-align:center;padding:96px 0"><div class="wrap">
+ <div style="font-size:84px">🐉</div>
+ <h2 style="max-width:760px;margin:10px auto">Hagamos que El Viaje Épico llegue a cada familia</h2>
+ <a class="btn" href="#s0" style="margin-top:14px">Volver al inicio ↑</a>
+</div></section>
+<footer class="mut">Kidscorp · Del Valle · Back To School 2027 · Chile · Propuesta de medios</footer>
+
+<script>
+const D={
+plat:[["YouTube","85,0"],["Netflix","59,2"],["Disney+","45,1"]],
+yt:[["Varias veces por día","29,0"],["Una vez por día","29,0"],["Varias veces por semana","32,6"],["Una vez por semana","7,8"]],
+ad:[["YouTube","52,9"],["TV abierta","25,0"],["TikTok","20,7"],["Sitio web","17,4"],["TV por cable","16,6"],["Instagram","13,0"],["Facebook","9,5"]],
+jue:[["Roblox","51,0"],["Minecraft","42,1"],["Minecraft Legends","22,8"],["Mario Kart","17,6"]],
+gas:[["Alimentos y bebidas","35,2"],["Juguetes","23,5"],["Comer afuera","20,8"],["Cine o teatro","16,2"]],
+edad:[["3-5 años","20"],["6-9 años","31"],["10-12 años","56"]],
+jug:[["Vivo","53,5"],["Watts","36,7"],["Andina","34,8"],["Livean","32,6"],["Zuko","26,5"],["Del Valle","22,2"]],
+vs:[["Eligen Del Valle · 3-12","8,8"],["Eligen Del Valle · 13-18","3,8","c"],["Sin jugo favorito · 3-12","18,4"],["Sin jugo favorito · 13-18","10,3","c"],["Influye en la compra (padres) · 3-12","37,6"],["Influye en la compra (padres) · 13-18","47,1","c"],["Anuncio favorito en digital · 3-12","77,9"],["Anuncio favorito en digital · 13-18","85,5","c"]]
+};
+const n=s=>parseFloat(s.replace(',','.'));
+document.querySelectorAll('.bars').forEach(b=>{b.innerHTML=D[b.dataset.k].map(r=>`<div class="bar"><span>${r[0]}</span><i><b class="${r[2]||''}" data-w="${n(r[1])}"></b></i><span>${r[1]}%</span></div>`).join('')});
+const fill=()=>document.querySelectorAll('.pane.on .bars b,.bars b').forEach(e=>{if(e.offsetParent)e.style.width=e.dataset.w+'%'});
+/* tabs */
+document.querySelectorAll('.tabs').forEach(t=>t.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const g=t.dataset.g;
+ t.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+ document.querySelectorAll(`.pane[data-g="${g}"]`).forEach(p=>p.classList.toggle('on',p.dataset.p===b.dataset.p));setTimeout(fill,30)}));
+/* mode */
+document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.seg button').forEach(x=>x.classList.toggle('on',x===b));
+ document.querySelectorAll('details.deep').forEach(d=>d.open=b.dataset.m==='f');
+ if(b.dataset.m==='f')document.querySelectorAll('.tabs').forEach(()=>{})});
+/* scroll: progress, dragon, nav */
+const S=[...document.querySelectorAll('section[id]')],L=[...document.querySelectorAll('#nav a')],stg=['Cría','Explorador','Guardián','Épico'];
+function sc_(){const h=document.documentElement,p=scrollY/(h.scrollHeight-innerHeight||1);pb.style.width=p*100+'%';dr.style.left=p*100+'%';
+ st.textContent='🐉 '+stg[Math.min(3,p*4|0)];
+ let cur=-1;S.forEach(s=>{if(s.getBoundingClientRect().top<120)cur=s.id});
+ L.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+(cur==='inversion'?'s4':cur)))}
+addEventListener('scroll',sc_,{passive:true});sc_();fill();
+</script>
+</body>
+</html>
